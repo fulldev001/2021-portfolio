@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Venus Rising';
+  src:url("assets/venus-rising.woff") format("woff");
+}
+
+* { margin: 0; padding: 0; }
+
+html, body {
+  touch-action: none;
+  overflow: hidden;
+}
+
+body.isHovering {
+  cursor: pointer;
+}
+
+#insta-message {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.5rem;
+  color: white;
+  background: #111;
+  border-radius: 10px;
+  font-family: 'Space Mono', monospace;
+
+  pointer-events: none;
+  user-select: none;
+
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+#insta-message.visible {
+  opacity: 1;
+}
+
+#insta-message.visible #close-insta-message {
+  pointer-events: auto;
+}
+
+#close-insta-message {
+  position: absolute;
+  top: -14px;
+  right: 7px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: black;
+}
+
+#close-insta-message svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+}
